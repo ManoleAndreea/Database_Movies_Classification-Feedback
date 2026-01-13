@@ -72,3 +72,13 @@ insert into feedback(id_film, continut, nr_stele, nume_autor) values
 (4, 'O poveste emotionanta si trista.', 9, 'Maria D.'),
 (5, 'Anthony Hopkins joaca genial.', 10, 'Cinefilul'),
 (6, 'Nu am inteles finalul, dar arata bine.', 8, 'Gigel');
+
+alter table film add column descriere TEXT;
+set SQL_SAFE_UPDATES=0;
+update film set descriere='O echipa de exploratori descopera un indiciu despre originile omenirii pe Pamant, ceea ce îi conduce într-o calatorie palpitanta spre cele mai intunecate colturi ale universului.' where id_film-1;
+update film set descriere='O lingvista este recrutata de armata pentru a comunica cu formele de viata extraterestre dupa ce douasprezece nave spatiale misterioase aterizeaza jn jurul lumii.' where id_film=2;
+update film set descriere='Echipajul unei nave spatiale comerciale intalneste o forma de viata mortală după ce investigheaza o transmisie necunoscuta de pe o luna din apropiere.' where id_film=3;
+update film set descriere='In Italia anilor 1980, o poveste de dragoste înfloreste intre un student de saptesprezece ani si asistentul de cercetare al tatalui sau.' where id_film=4;
+update film set descriere='O tanara cadeta F.B.I. trebuie să ceara ajutorul unui criminal canibal încarcerat si manipulator pentru a prinde un alt criminal în serie.' where id_film=5;
+update film set descriere='Dupa descoperirea unui artefact misterios jngropat sub suprafața lunara, o nava spatiala este trimisa spre Jupiter pentru a-i gasi originile, operata de doi oameni si supercomputerul HAL 9000.' where id_film=6;
+set SQL_SAFE_UPDATES=1;

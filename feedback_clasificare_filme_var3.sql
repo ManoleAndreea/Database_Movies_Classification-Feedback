@@ -1,0 +1,246 @@
+-- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
+--
+-- Host: localhost    Database: feedback_clasificare_filme
+-- ------------------------------------------------------
+-- Server version	9.3.0
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `actor`
+--
+
+DROP TABLE IF EXISTS `actor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `actor` (
+  `id_actor` int NOT NULL AUTO_INCREMENT,
+  `nume_actor` varchar(100) NOT NULL,
+  `id_date` int DEFAULT NULL,
+  PRIMARY KEY (`id_actor`),
+  KEY `id_date` (`id_date`),
+  CONSTRAINT `actor_ibfk_1` FOREIGN KEY (`id_date`) REFERENCES `detalii_persoana` (`id_date`) ON DELETE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `actor`
+--
+
+LOCK TABLES `actor` WRITE;
+/*!40000 ALTER TABLE `actor` DISABLE KEYS */;
+INSERT INTO `actor` VALUES (1,'Noomi Rapace',6),(2,'Michael Fassbender',7),(3,'Amy Adams',8),(4,'Sigourney Weaver',9),(5,'Timothee Chalamet',10),(6,'Armie Hammer',11),(7,'Jodie Foster',12),(8,'Anthony Hopkins',13),(9,'Keir Dullea',14),(11,'Ioana Mihai',17),(12,'Ioana Mihai',18),(13,'Anne Hathaway',20),(14,'Nicole Kidman',22),(15,'Colin Farrell',23),(16,'Joseph Gordon-Levitt',24),(17,'Naomi Watts <3',27),(18,'Neve Campbell',28),(19,'Courteney Cox',29),(20,'David Arquette',30),(21,'Drew Barrymore',31);
+/*!40000 ALTER TABLE `actor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `detalii_persoana`
+--
+
+DROP TABLE IF EXISTS `detalii_persoana`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `detalii_persoana` (
+  `id_date` int NOT NULL AUTO_INCREMENT,
+  `nume_persoana` varchar(50) NOT NULL,
+  `varsta` int DEFAULT NULL,
+  `bibliografie` text,
+  PRIMARY KEY (`id_date`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `detalii_persoana`
+--
+
+LOCK TABLES `detalii_persoana` WRITE;
+/*!40000 ALTER TABLE `detalii_persoana` DISABLE KEYS */;
+INSERT INTO `detalii_persoana` VALUES (1,'Ridley Scott',86,'Regizor britanic cunoscut pentru filme SF si istorice.'),(2,'Denis Villeneuve',56,'Regizor canadian apreciat pentru stilul vizual unic.'),(3,'Luca Guadagnino',52,'Regizor italian cunoscut pentru estetica senzuala.'),(4,'Jonathan Demme',73,'Regizor american, castigator Oscar.'),(5,'Stanley Kubrick',70,'Unul dintre cei mai influenti regizori din istorie.'),(6,'Noomi Rapace',44,'Actrita suedeza.'),(7,'Michael Fassbender',46,'Actor germano-irlandez.'),(8,'Amy Adams',49,'Actrita americana cunoscuta pentru roluri dramatice.'),(9,'Sigourney Weaver',74,'Pioniera a eroinelor de actiune in SF.'),(10,'Timothee Chalamet',28,'Actor tanar cu numeroase nominalizari.'),(11,'Armie Hammer',37,'Actor american.'),(12,'Jodie Foster',61,'Actrita si regizoare de succes.'),(13,'Anthony Hopkins',86,'Actor galez legendar.'),(14,'Keir Dullea',87,'Actor american cunoscut pentru 2001: A Space Odyssey.'),(16,'Manole',10,'kjhgfdx'),(17,'Ioana Mihai',21,'Este o actrita tanara'),(18,'Ioana Mihai',21,'Este o actrita tanara'),(19,'Christopher Nolan',55,'Sir Christopher Edward Nolan CBE este un regizor, scenarist și producător de film britanico-american. A devenit cunoscut odată cu scenariul thriller-ului psihologic Memento, film pe care l-a și regizat.'),(20,'Anne Hathaway',43,'Anne Jacqueline Hathaway, este o actriță americană. Rolul care a consacrat-o a fost Mia Thermopolis din The Princess Diaries. Debutul și l-a făcut pe scena de teatru, iar în anul 1999 a apărut în serialul de televiziune Get Real.'),(21,'Yorgos Lanthimos',52,'Georgios „Yorgos” Lanthimos este regizor și dramaturg grec. A câștigat premiul Un Certain Regard la Festivalul Internațional de Film de la Cannes, având, de asemenea, în palmares premiul BAFTA, premiul Globul de Aur și șase nominalizări la premiile Oscar'),(22,'Nicole Kidman',58,'Nicole Kidman este o actriță australiană de film, care are dublă cetățenie, australiană și americană. În anul 2002, a câștigat Premiul Oscar pentru cea mai bună actriță în filmul The Hours.'),(23,'Colin Farrell',49,'Colin James Farrell este un actor irlandez, câștigător a două Globuri de Aur și nominalizat la premiile Oscar. A apărut în numeroase filme de succes cum ar fi Minority Report, Miami Vice, Phone Booth, In Bruges, Triage, Alexandru sau Spiritele din Inisherin.'),(24,'Joseph Gordon-Levitt',44,'Joseph Leonard Gordon-Levitt este un actor american, jucând în filme precum Latter Days și 10 lucruri nu-mi plac la tine, dar și în serialul A treia planetă de la soare'),(25,'Gregg Araki',66,'Gregg Araki este un regizor american. El este remarcat pentru implicarea sa în mișcarea New Queer Cinema. Trilogia sa de filme Teenage Apocalypse, formată din Totally F***ed Up, The Doom Generation și Nowhere, a fost proclamată ca un clasic de cult.'),(26,'David Lynch',80,'David Keith Lynch a fost un producător, regizor, compozitor și scenarist de film american. Filmele lui Lynch sunt cunoscute pentru elementele lor de suprarealism, secvențele de vis și coșmar, imaginile stranii de multe ori cu elemente distincte de noir și neo-noir, coloana sonoră creată cu meticulozitate.'),(27,'Naomi Watts <3',57,'Naomi Ellen Watts este o actriță britanică nominalizată la premiile Oscar.'),(28,'Neve Campbell',52,'Neve Adrianne Campbell este o actriță canadiană. A jucat mult teatru înainte de a-și câștiga faima în televiziune, în serialul Party of Five unde a jucat rolul Julia Salinger. A câștigat faima și iubirea publicului pentru rolul din thrillerul Scream.'),(29,'Courteney Cox',61,'Courteney Bass Cox este o actriță, producător și regizor american. Este cel mai bine cunoscută pentru rolul lui Monica Geller în sitcomul Friends.'),(30,'David Arquette',55,'The youngest of five, David Arquette was born in Winchester, Virginia and is part of the illustrious Arquette family, whose work has spread over several generations. His parents, Lewis Arquette, an actor, and Brenda Denaut (née Nowak), an acting teacher and therapist, had 4 other children: Rosanna Arquette, Richmond Arquette, Patricia Arquette, and Alexis Arquette, all actors. His paternal grandfather, Cliff Arquette, was also an entertainer. '),(31,'Drew Barrymore',51,'Since melting filmgoers\' hearts at the tender age of six in Steven Spielberg\'s beloved sci-fi blockbuster, E.T. the Extra-Terrestrial (1982), Drew Barrymore has emerged as one of the most iconic and singularly gifted talents of her generation. Born in Culver City, California to John Drew Barrymore and Jaid Barrymore, the clutches of fame were virtually inescapable for young Drew, her father being a member of the esteemed showbiz dynasty fronted by stage star Maurice Barrymore, his thespian wife Georgiana, and their three children: Lionel Barrymore, Ethel Barrymore, and John Barrymore.\r\n\r\nIn the wake of a challenging era fuelled by addiction and media vitriol, an industrious Barrymore threw herself into her work during the early-mid nineties, first with an assortment of \"bad girl\" parts in cultish B-pics like Poison Ivy (1992), Guncrazy (1992), Doppelganger (1993), and - befittingly - Bad Girls (1994); then, warmly received supporting roles in mainstream fare such as Boys on the Side (1995), Batman Forever (1995), Woody Allen\'s Everyone Says I Love You (1996), and Wes Craven\'s game-changing horror megahit, Scream (1996). Equal portions of goofball - The Wedding Singer (1998), Never Been Kissed (1999), Charlie\'s Angels (2000) - and gravitas - Riding in Cars with Boys (2001), Donnie Darko (2001), Confessions of a Dangerous Mind (2002) - came next, with a Golden Globe-grabbing pièce de résistance - her divine incarnation of Edith Bouvier Beale in Grey Gardens (2009) - confirming that her skill set was every bit as broad and robust as imagined.\r\n\r\nHaving already birthed an array of projects through Flower Films, the production house she co-formed with Nancy Juvonen in \'95, Barrymore fastened an additional string to her bow when she spearheaded the sports dramedy Whip It (2009), her richly appraised directorial debut. Following a steady run of star vehicles at the front end of the 2010s, her tour de force turn as walking-dead suburban realtor Sheila Hammond - on Netflix\'s Santa Clarita Diet (2017) - saw her step with trademark resolve into newer territory still: the flourishing world of small screen entertainment, a metamorphosis she continues to espouse with her role as compère of spirited daytime staple, The Drew Barrymore Show (2020).\r\n- IMDb mini biography by: R.N.'),(32,'Wes Craven',76,'Wes Craven has become synonymous with genre bending and innovative horror, challenging audiences with his bold vision.\r\n\r\nWesley Earl Craven was born in Cleveland, Ohio, to Caroline (Miller) and Paul Eugene Craven. He had a midwestern suburban upbringing. His first feature film was The Last House on the Left (1972), which he wrote, directed, and edited. Craven reinvented the youth horror genre again in 1984 with the classic A Nightmare on Elm Street (1984), a film he wrote and directed. And though he did not direct any of its five sequels, he deconstructed the genre a decade later, writing and directing the audacious Wes Craven\'s New Nightmare (1994), which was nominated as Best Feature at the 1995 Independent Spirit Awards, and introduced the concept of self-reflexive genre films to the world.\r\n\r\nIn 1996 Craven reached a new level of success with the release of Scream (1996). The film, which sparked the phenomenal trilogy, was the winner of MTV\'s 1996 Best Movie Award and grossed more than $100 million domestically, as did Scream 2 (1997). Between Scream 2 and Scream 3 (2000), Craven, offered the opportunity to direct a non-genre film for Miramax, helmed Music of the Heart (1999), a film that earned Meryl Streep an Academy Award nomination for Best Actress. That same year, in the midst of directing, Craven completed his first novel, \"The Fountain Society,\" published by Simon & Shuster. Recent works include the 2005 psychological thriller Red Eye (2005), and a short rom-com segment for the ensemble product, Paris, je t\'aime (2006).\r\n\r\nIn later years, Craven also produced remakes of two of his earlier films for his genre fans, The Hills Have Eyes (2006) and The Last House on the Left (2009). Craven has always had an eye for discovering fresh talent, something that contributes to the success of his films. While casting A Nightmare on Elm Street, Craven discovered the then unknown Johnny Depp. Craven later cast Sharon Stone in her first starring role for his film Deadly Blessing. He even gave Bruce Willis his first featured role in an episode of TV\'s mid-80\'s edition of The Twilight Zone. In My Soul to Take (2010), Craven once again brought together a cast of up-and-coming young teens, including Max Thieriot, in whom he saw the spark of stardom. The film marked Craven\'s first collaboration with wife and producer Iya Labunka, who also produced with him the highly anticipated production of Scream 4.\r\n\r\nCraven\'s Scream 4 (2011) reunited the director with Dimension Films and Kevin Williamson, as well as with stars Neve Campbell, Courteney Cox and David Arquette, to re-boot the beloved franchise. Craven again exhibited his knack for spotting important talent, with a cast of young actors bringing us a totally new breed of Woodsboro high schoolers, including Emma Robert and Hayden Pannetierre.\r\n- IMDb mini biography by: Erica Sterne fathertimethemovie@gmail.com');
+/*!40000 ALTER TABLE `detalii_persoana` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `distributie`
+--
+
+DROP TABLE IF EXISTS `distributie`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `distributie` (
+  `id_film` int NOT NULL,
+  `id_actor` int NOT NULL,
+  PRIMARY KEY (`id_film`,`id_actor`),
+  KEY `id_actor` (`id_actor`),
+  CONSTRAINT `distributie_ibfk_1` FOREIGN KEY (`id_film`) REFERENCES `film` (`id_film`) ON DELETE CASCADE,
+  CONSTRAINT `distributie_ibfk_2` FOREIGN KEY (`id_actor`) REFERENCES `actor` (`id_actor`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `distributie`
+--
+
+LOCK TABLES `distributie` WRITE;
+/*!40000 ALTER TABLE `distributie` DISABLE KEYS */;
+INSERT INTO `distributie` VALUES (1,1),(1,2),(2,2),(2,3),(3,4),(4,5),(4,6),(5,7),(5,8),(5,11),(7,13),(8,14),(8,15),(9,16),(10,17),(11,18),(11,19),(11,20),(11,21);
+/*!40000 ALTER TABLE `distributie` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `feedback`
+--
+
+DROP TABLE IF EXISTS `feedback`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `feedback` (
+  `id_feedback` int NOT NULL AUTO_INCREMENT,
+  `id_film` int NOT NULL,
+  `continut` text,
+  `nr_stele` int DEFAULT NULL,
+  `nume_autor` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id_feedback`),
+  KEY `id_film` (`id_film`),
+  CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`id_film`) REFERENCES `film` (`id_film`) ON DELETE CASCADE,
+  CONSTRAINT `feedback_chk_1` CHECK (((`nr_stele` >= 1) and (`nr_stele` <= 10)))
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `feedback`
+--
+
+LOCK TABLES `feedback` WRITE;
+/*!40000 ALTER TABLE `feedback` DISABLE KEYS */;
+INSERT INTO `feedback` VALUES (1,1,'Vizual impresionant, dar povestea e complicata.',7,'Ion Popescu'),(2,3,'Cel mai bun film horror din spatiu!',10,'AlienFan99'),(3,4,'O poveste emotionanta si trista.',9,'Maria D.'),(4,5,'Anthony Hopkins joaca genial.',10,'Cinefilul'),(7,4,'Filmul meu preferat frate...',10,'VINTREX'),(8,5,'mi a placut mult :)',8,'IOANA'),(9,4,'Prea misto frate, e bombita',9,'YULULU'),(10,7,'a little more horror and a little less love please',6,'hr_giger'),(11,10,'The late great David Lynch\'s Mulholland Drive starts with a car crash on- wait for it- Mulholland Drive. With picturesque views of LA at night, the sole survivor Rita (Laura Harring) trundles down the valley into the city. Police soon learn that a witness might have fled from the crash and a search begins. It\'s not the search that\'s important, per se, but more the fact that it\'s happening at all. It\'s a plot device to set mood; the mood itself is the goal.\r\n\r\nNext, Naomi Watts\' character Betty arrives at LA International Airport on the arm of an older couple whom she\'d met on the flight. She mutters no words beyond, \"Oh, I can\'t believe it\" as she\'s welcomed by the \"Welcome to Los Angeles!\" banner at the foot of the escalator. We don\'t know much about where she\'s headed or why- but we totally do: starlet lands in Hollywood in search of fame and fortune. Lynch appreciates how there\'s scarce need for dialogue. This story\'s been told enough times that we can fill in the holes ourselves. He lets the movie breathe.\r\n\r\nRita and Betty eventually cross paths and the narrative takes shape from there, alongside a passel of other characters and storylines. Everyone\'s either being chased/watched, feels like they are, or is just generally discomfited by their predicament. There\'s an active force in the background that we can\'t see despite our eyes being glued to the screen. It takes some time before we make sense of the many abstractions. True to form, Lynch moves artfully between what\'s real, what\'s vivid dream, and what\'s pure fantasy- it\'s Hollywood, remember- but we remain confident in the story based on clues provided by a director who\'s long earned our trust as moviegoers.\r\n\r\nOpulent orchestral music (City of Prague Philharmonic) animates the monster of the city. The gently pulsating score gives texture to the mood, depth to the drama, and ultimately heart to the film. Periodic shots of the Hollywood sign serve as a visual reminder of where we are. Bird\'s eye views of the heliports downtown reinforce the same. Only later do we realize the story has not much to do with LA- yet it does. It\'s a movie about making movies, after all. If Quentin Tarantino\'s Once Upon a Time... in Hollywood was a love letter to Los Angeles in general, Lynch\'s Mulholland Drive is a hostile rebuke of Hollywood in particular (which might be a good way to approach this ambitious film if you\'re seeing it for the first time).\r\n\r\nOn balance, Mulholland Drive means different things to different people- maybe even different things to the same people! We come to Hollywood to realize our dreams, and its winding road leads some to success and others over the edge. It may lead to a crash from which we can escape- literally or figuratively- but our ultimate fate is decided by strangers, some of whom lie in our own heads. We may start by looking outwardly for answers but by the end we\'re transfixed on what\'s happening within. So while Mulholland Drive does exist on a map, it\'s the Mulholland Drive in our minds that may dictate actual outcomes. As one character declares to another halfway through the film, \"Man\'s attitude will determine to a large extent how his life will be.\"\r\n\r\nWell if that\'s true, Lynch must have had a wonderful attitude because he led an exemplary life, and this film was surely among the peaks of his career. Essential viewing.\r\n\r\n---\r\n\r\n\"In work and in life, we\'re all supposed to get along. We\'re supposed to have fun, like puppy dogs with our tails wagging. It\'s supposed to be great living; it\'s supposed to be fantastic.\" - David Lynch.',9,'greatandimproving'),(12,10,'I feel it\'s hypocritical to call a movie a \"masterpiece\" (which this is), while at the same time slapping it a bit for the very essence of what it is and tries to achieve... but that\'s what keeps this from being a \"10\" for me. Because, after watching and then exhaustingly reading about the film (and understanding more about it that way), it\'s pretty obvious that many/most people won\'t \"get it\" fully the first time... and that detracts a little... even though the complexities are what ultimately makes it great. Does that make sense?\r\n\r\nIt\'s a Catch-22. You can\'t KNOW about it before you start... that would ruin the presentation... and yet there\'s a very legit chance you won\'t fully understand it either if you go in cold. It needs either a 2nd viewing, or the post-movie research to understand (if you\'re willing to do that, and even if you DO, you\'re going to want to watch it again anyway). All the clues are there and it all makes sense, once you know. But it is so intentionally deceptive, it\'s hard to know what you don\'t know.\r\n\r\nBut it\'s brilliant, artistic, evocative, and clever. It slaps hard at Hollywood and the dream machine, and the disillusionment of aspiration. There is quite simply nothing like it. It has been called \"the best film of the 21st Century,\" and I won\'t dispute that. But it IS hard to follow and understand and demands more of the viewer than almost any film I\'ve ever seen. So I\'d say watch it, draw your own conclusions, read about it, hear what others think and believe... and then watch it again. You will be rewarded\r\n\r\nBut there is no denying that it is absolute brilliance, and David Lynch\'s crowning achievement.',9,'bk753');
+/*!40000 ALTER TABLE `feedback` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `film`
+--
+
+DROP TABLE IF EXISTS `film`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `film` (
+  `id_film` int NOT NULL AUTO_INCREMENT,
+  `nume_film` varchar(150) NOT NULL,
+  `an_aparitie` int DEFAULT NULL,
+  `durata` int DEFAULT NULL,
+  `id_regizor` int DEFAULT NULL,
+  `descriere` text,
+  PRIMARY KEY (`id_film`),
+  KEY `id_regizor` (`id_regizor`),
+  CONSTRAINT `film_ibfk_1` FOREIGN KEY (`id_regizor`) REFERENCES `regizor` (`id_regizor`) ON DELETE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `film`
+--
+
+LOCK TABLES `film` WRITE;
+/*!40000 ALTER TABLE `film` DISABLE KEYS */;
+INSERT INTO `film` VALUES (1,'Prometheus',2012,124,1,NULL),(2,'Arrival',2016,116,2,'O lingvista este recrutata de armata pentru a comunica cu formele de viata extraterestre dupa ce douasprezece nave spatiale misterioase aterizeaza jn jurul lumii.'),(3,'Alien',1979,117,1,'Echipajul unei nave spatiale comerciale intalneste o forma de viata mortală după ce investigheaza o transmisie necunoscuta de pe o luna din apropiere.'),(4,'Call Me by Your Name',2017,132,3,'In Italia anilor 1980, o poveste de dragoste înfloreste intre un student de saptesprezece ani si asistentul de cercetare al tatalui sau.'),(5,'The Silence of the Lambs',1991,118,4,'O tanara cadeta F.B.I. trebuie să ceara ajutorul unui criminal canibal încarcerat si manipulator pentru a prinde un alt criminal în serie. '),(7,'Interstellar',2014,169,7,'DA'),(8,'The Killing of a Sacred Deer',2017,121,8,'A devious teen starts to insinuate himself into the life of a renowned surgeon and his family.'),(9,'Mysterious Skin',2004,105,9,'Misterele tinereții este un film dramatic independent american-olandeză din 2004 adaptat după romanul Mysterious Skin de Scott Heim. Al optulea film regizat de Araki, acesta a avut premiera la Festivalul Internațional de Film de la Veneția în 2004, fiind distribuit publicului în 2005.'),(10,'Mulholland Drive',2001,147,10,'After a car wreck on Mulholland Drive renders a woman amnesiac, she and a Hollywood-hopeful search for clues and answers across Los Angeles.'),(11,'Scream',1996,111,11,'In the small town of Woodsboro, California, a masked killer known as Ghostface begins murdering high school students, and a group of friends must use their knowledge of horror movies to unmask the killer.');
+/*!40000 ALTER TABLE `film` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `film_gen`
+--
+
+DROP TABLE IF EXISTS `film_gen`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `film_gen` (
+  `id_film` int NOT NULL,
+  `id_gen` int NOT NULL,
+  PRIMARY KEY (`id_film`,`id_gen`),
+  KEY `id_gen` (`id_gen`),
+  CONSTRAINT `film_gen_ibfk_1` FOREIGN KEY (`id_film`) REFERENCES `film` (`id_film`) ON DELETE CASCADE,
+  CONSTRAINT `film_gen_ibfk_2` FOREIGN KEY (`id_gen`) REFERENCES `gen` (`id_gen`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `film_gen`
+--
+
+LOCK TABLES `film_gen` WRITE;
+/*!40000 ALTER TABLE `film_gen` DISABLE KEYS */;
+INSERT INTO `film_gen` VALUES (1,1),(2,1),(3,1),(7,1),(1,2),(3,2),(8,2),(10,2),(11,2),(2,3),(4,3),(5,3),(7,3),(9,3),(4,4),(5,5),(9,5),(10,5),(11,5),(8,6),(9,6),(10,6);
+/*!40000 ALTER TABLE `film_gen` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `gen`
+--
+
+DROP TABLE IF EXISTS `gen`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `gen` (
+  `id_gen` int NOT NULL AUTO_INCREMENT,
+  `nume_gen` varchar(50) NOT NULL,
+  `detalii_gen` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_gen`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gen`
+--
+
+LOCK TABLES `gen` WRITE;
+/*!40000 ALTER TABLE `gen` DISABLE KEYS */;
+INSERT INTO `gen` VALUES (1,'SF','Filme Science Fiction, tehnologie, spatiu.'),(2,'Horror','Filme de groaza, suspans.'),(3,'Drama','Filme axate pe dezvoltarea personajelor.'),(4,'Romance','Filme de dragoste.'),(5,'Thriller','Filme cu suspans psihologic.'),(6,'Mister','Filme cu detectivi sau enigme.');
+/*!40000 ALTER TABLE `gen` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `regizor`
+--
+
+DROP TABLE IF EXISTS `regizor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `regizor` (
+  `id_regizor` int NOT NULL AUTO_INCREMENT,
+  `nume_regizor` varchar(100) NOT NULL,
+  `id_date` int DEFAULT NULL,
+  PRIMARY KEY (`id_regizor`),
+  KEY `id_date` (`id_date`),
+  CONSTRAINT `regizor_ibfk_1` FOREIGN KEY (`id_date`) REFERENCES `detalii_persoana` (`id_date`) ON DELETE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `regizor`
+--
+
+LOCK TABLES `regizor` WRITE;
+/*!40000 ALTER TABLE `regizor` DISABLE KEYS */;
+INSERT INTO `regizor` VALUES (1,'Ridley Scott',1),(2,'Denis Villeneuve',2),(3,'Luca Guadagnino',3),(4,'Jonathan Demme',4),(5,'Stanley Kubrick',5),(6,'Manole',16),(7,'Christopher Nolan',19),(8,'Yorgos Lanthimos',21),(9,'Gregg Araki',25),(10,'David Lynch',26),(11,'Wes Craven',32);
+/*!40000 ALTER TABLE `regizor` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2026-01-14  1:49:27

@@ -259,12 +259,7 @@ $preselected_film = isset($_GET['id_film']) ? intval($_GET['id_film']) : 0;
 </head>
 <body>
 
-<div class="nav-bar">
-    <a href="dashboard.php">🏠 Acasa</a>
-    <a href="filme.php">🎬 Filme</a>
-    <a href="actori.php">🎭 Actori</a>
-    <a href="logout.php" class="logout">🚪 Deconectare</a>
-</div>
+
 
 <div class="container">
     <div class="form-card">

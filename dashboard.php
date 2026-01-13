@@ -290,6 +290,17 @@ button[type="submit"]:hover {
             ?>
         </div>
 
+        <div class="card">
+            <h2><span class="card-icon">⚡</span> Actiuni Rapide</h2>
+            <div class="quick-actions">
+                <a href="filme.php" class="action-btn">Vezi Filme</a>
+                <a href="adaugare.php" class="action-btn">Adauga Film</a>
+              
+            
+                <a href="statistici.php" class="action-btn" style="background: linear-gradient(45deg, #8e44ad, #9b59b6);">
+                    📊 Vezi Statistici
+                </a>
+           
       
             </div>
             <p class="info-text">Acceseaza rapid functiile principale ale aplicatiei din meniul de mai sus sau folosind butoanele de actiune rapida.</p>
